@@ -1,7 +1,7 @@
 from tkinter import*
 root=Tk()
 root.title("Sudoku Solver beta-VVM1")
-root.geometry("700x400")
+root.geometry("700x380")
 ##"324x550"yeh og dimenstion hai for my grids
 label=Label(root,text="Fill in the numabers and click solve").grid(row=0,column=1,columnspan=10)
 errLabel=Label(root,text="",fg="red")
@@ -51,11 +51,11 @@ def getValues():
                 rows.append(int(val))
         board.append(rows)
 reg=root.register(ValidateNumber)
-btn=Button(root,command=getValues,text="Solve",width=10,foreground="white",background="#4194FF")
-btn.grid(row=18,column=1,columnspan=5,pady=20)
+btn=Button(root,command=getValues,text="Solve",width=15,height=2,foreground="white",background="#4194FF")
+btn.grid(row=13,column=1,columnspan=5,pady=20)
 
-btn=Button(root,command=getValues,text="Clear",width=10,foreground="white",background="#4194FF")
-btn.grid(row=18,column=5,columnspan=5,pady=20)
+btn=Button(root,command=getValues,text="Clear",width=15,height=2,foreground="white",background="#4194FF")
+btn.grid(row=13,column=5,columnspan=5,pady=20)
 
 draw9x9Grid()
 root.mainloop()           
