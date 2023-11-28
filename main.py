@@ -68,7 +68,7 @@ import tkinter as tk
 root = tk.Tk()
 root.title("Sudoku Solver")
 root.configure(bg="#194972")
-root.geometry("700x350")
+root.geometry("650x320")
 
 #fonts used
 font_=("Bookman Old Style",9)
@@ -159,10 +159,10 @@ b1=Button(root,text="Solve Cell",width=10,bg="#a8a8aa",justify=CENTER,relief="gr
 b2=Button(root,text="Clear",width=10,bg="#a8a8aa",justify=CENTER,relief="groove",activebackground="#dce3ed",font=font01,fg="White",command=clear_entry)
 b3=Button(root,text="Undo",width=10,bg="#a8a8aa",justify=CENTER,relief="groove",activebackground="#dce3ed",font=font01,fg="White")
 b4=Button(root,text="Remove",width=10,bg="#a8a8aa",justify=CENTER,relief="groove",activebackground="#dce3ed",font=font01,fg="White",command=lambda X=X: button_click01(X))
-b5=Button(root,text="Solve",width=15,height=1,bg="#5a7bc0",justify=CENTER,relief="groove",activebackground="#dce3ed",font=font03,fg="White")
+b5=Button(root,text="Solve",width=22,height=1,bg="#5a7bc0",justify=CENTER,relief="groove",activebackground="#dce3ed",font=font03,fg="White")
 
 L1=Label(root,text="Functions:",justify=LEFT,font=font02,fg="White",bg="#194972")
-L2=Label(root,text="Note:To enter your question choose a cell and use the number pad given below to give the input:",justify=LEFT,wraplength=300,bg="#194972",font=font02,fg="White")
+#L2=Label(root,text="Note:To enter your question choose a cell and use the number pad given below to give the input:",justify=LEFT,wraplength=300,bg="#194972",font=font02,fg="White")
 
 frame01.place(x=20,y=10)
 L1.place(x=370,y=10)
@@ -170,9 +170,9 @@ b1.place(x=400,y=30)
 b2.place(x=500,y=30)
 b3.place(x=400,y=70)
 b4.place(x=500,y=70)
-L2.place(x=370,y=105)
-frame.place(x=370,y=140)
-b5.place(x=380,y=290)
+#L2.place(x=370,y=105)
+frame.place(x=420,y=110)
+b5.place(x=380,y=270)
 
 #Run the Tkinter event loop
 root.mainloop()
