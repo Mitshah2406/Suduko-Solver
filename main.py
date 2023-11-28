@@ -1,4 +1,4 @@
-from tkinter import*
+'''from tkinter import*
 root=Tk()
 root.title("Sudoku Solver beta-VVM1")
 root.geometry("700x380")
@@ -58,9 +58,9 @@ btn=Button(root,command=getValues,text="Clear",width=15,height=2,foreground="whi
 btn.grid(row=13,column=5,columnspan=5,pady=20)
 
 draw9x9Grid()
-root.mainloop()           
+root.mainloop()'''           
 
-'''from tkinter import *
+from tkinter import *
 import tkinter as tk
 
 
@@ -175,4 +175,4 @@ frame.place(x=370,y=140)
 b5.place(x=380,y=290)
 
 #Run the Tkinter event loop
-root.mainloop()'''
+root.mainloop()
