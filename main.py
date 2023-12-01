@@ -161,10 +161,10 @@ def solve_sudoku_ui():
     else:
         print("Cannot solve Sudoku. Check your input.")
 
-b1 = Button(root, text="Solve Cell", width=10, bg="#a8a8aa", justify=CENTER, relief="groove", activebackground="#dce3ed", font=font01, fg="White",command=solve_cell)
-b2 = Button(root, text="Clear", width=10, bg="#a8a8aa", justify=CENTER, relief="groove", activebackground="#dce3ed", font=font01, fg="White", command=clear_entry)
-b3 = Button(root, text="Undo", width=10, bg="#a8a8aa", justify=CENTER, relief="groove", activebackground="#dce3ed", font=font01, fg="White",command=undo)
-b4 = Button(root, text="Remove", width=10, bg="#a8a8aa", justify=CENTER, relief="groove", activebackground="#dce3ed", font=font01, fg="White", command=lambda X=X: button_click01(X))
+b1 = Button(root, text="Solve Cell", width=10, bg="#a8a8aa", justify=CENTER, relief="groove", activebackground="#dce3ed", font=font01, fg="black",command=solve_cell)
+b2 = Button(root, text="Clear", width=10, bg="#a8a8aa", justify=CENTER, relief="groove", activebackground="#dce3ed", font=font01, fg="black", command=clear_entry)
+b3 = Button(root, text="Undo", width=10, bg="#a8a8aa", justify=CENTER, relief="groove", activebackground="#dce3ed", font=font01, fg="black",command=undo)
+b4 = Button(root, text="Remove", width=10, bg="#a8a8aa", justify=CENTER, relief="groove", activebackground="#dce3ed", font=font01, fg="black", command=lambda X=X: button_click01(X))
 b5 = Button(root, text="Solve", width=22, height=1, bg="#5a7bc0", justify=CENTER, relief="groove", activebackground="#dce3ed", font=font03, fg="White", command=solve_sudoku_ui)
 
 L1 = Label(root, text="Functions:", justify=LEFT, font=font02, fg="White", bg="#194972")
