@@ -170,7 +170,7 @@ b5 = Button(root, text="Solve", width=22, height=1, bg="#5a7bc0", justify=CENTER
 L1 = Label(root, text="Functions:", justify=LEFT, font=font02, fg="White", bg="#194972")
 
 frame01.place(x=20, y=10)
-L1.place(x=370, y=10)
+L1.place(x=400, y=10)
 b1.place(x=400, y=30)
 b2.place(x=500, y=30)
 b3.place(x=400, y=70)
