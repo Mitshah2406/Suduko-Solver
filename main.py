@@ -20,6 +20,8 @@ font03 = ("Comic Sans MS", 12, "bold")
 frame01 = tk.Frame(root, padx=10, pady=10)
 frame01.configure(bg="#194972")
 cells = {}
+stack = []
+
 
 reg = root.register(ValidateNumber)
 
@@ -66,6 +68,7 @@ def button_click(button_text):
     a = root.focus_get()
     if isinstance(a, tk.Entry):
         b = a.get()
+        stack.append((a,b))
         a.delete(0, tk.END)
         a.insert(tk.END, b + str(button_text))
 
@@ -73,11 +76,42 @@ def button_click01(button_text):
     a = root.focus_get()
     if isinstance(a, tk.Entry):
         b = a.get()
+        stack.append((a,b))
         a.delete(0, tk.END)
 
 def clear_entry():
     for b, a in cells.items():
         a.delete(0, tk.END)
+
+def undo():
+    if stack:
+        entry, text = stack.pop()
+        entry.delete(0, tk.END)
+        entry.insert(tk.END, text)
+
+def solve_cell():
+    a = root.focus_get()
+    if isinstance(a, tk.Entry):
+        b = a.get()
+        board = []
+        for row in range(2, 11):
+            rows = []
+            for col in range(1, 10):
+                val = cells[(row, col)].get()
+                if val == "":
+                    rows.append(0)
+                else:
+                    rows.append(int(val))
+            board.append(rows)
+
+        i, j = int(a.grid_info()["row"]), int(a.grid_info()["column"])
+
+        if solve_sudoku(board):
+            a.delete(0, tk.END)
+            a.insert(tk.END, str(board[i - 2][j - 1]))
+        else:
+            print("Cannot solve cell. Check your input.")
+
 def is_valid(board, row, col, num):
     for i in range(9):
         if board[row][i] == num or board[i][col] == num:
@@ -127,9 +161,9 @@ def solve_sudoku_ui():
     else:
         print("Cannot solve Sudoku. Check your input.")
 
-b1 = Button(root, text="Solve Cell", width=10, bg="#a8a8aa", justify=CENTER, relief="groove", activebackground="#dce3ed", font=font01, fg="White")
+b1 = Button(root, text="Solve Cell", width=10, bg="#a8a8aa", justify=CENTER, relief="groove", activebackground="#dce3ed", font=font01, fg="White",command=solve_cell)
 b2 = Button(root, text="Clear", width=10, bg="#a8a8aa", justify=CENTER, relief="groove", activebackground="#dce3ed", font=font01, fg="White", command=clear_entry)
-b3 = Button(root, text="Undo", width=10, bg="#a8a8aa", justify=CENTER, relief="groove", activebackground="#dce3ed", font=font01, fg="White")
+b3 = Button(root, text="Undo", width=10, bg="#a8a8aa", justify=CENTER, relief="groove", activebackground="#dce3ed", font=font01, fg="White",command=undo)
 b4 = Button(root, text="Remove", width=10, bg="#a8a8aa", justify=CENTER, relief="groove", activebackground="#dce3ed", font=font01, fg="White", command=lambda X=X: button_click01(X))
 b5 = Button(root, text="Solve", width=22, height=1, bg="#5a7bc0", justify=CENTER, relief="groove", activebackground="#dce3ed", font=font03, fg="White", command=solve_sudoku_ui)
 
