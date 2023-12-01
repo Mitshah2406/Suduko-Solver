@@ -58,7 +58,7 @@ def draw3x3Grid01(row, column, bgcolor):
             y = i+5
         for j in range(3):
             x = y+j
-            b = Button(frame, text=x, width=4, bg=bgcolor, relief="groove", activebackground="#dce3ed", justify="center", font=font_, fg="#5a7bc0", command=lambda x=x: button_click(x))
+            b = Button(frame, text=x, width=4, bg=bgcolor, relief="groove", activebackground="#dce3ed", justify="center", font=font_, fg="black", command=lambda x=x: button_click(x))
             b.grid(row=row+i+1, column=column+j+1, sticky="nsew", padx=1, pady=1, ipady=5)
             cells02[(row+i+1, column+j+1)] = b
 
